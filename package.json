@@ -1,0 +1,13 @@
+{
+  "name": "cypress-e2e-automation",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run"
+  },
+  "devDependencies": {
+    "cypress": "^15.18.1",
+    "typescript": "^6.0.0"
+  }
+}
