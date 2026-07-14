@@ -4,7 +4,7 @@ A professional end-to-end (E2E) test automation framework built with **Cypress**
 
 ---
 
-## 🎯 Project Goals
+## Project Goals
 
 This project was created to demonstrate practical SDET skills, including:
 
@@ -22,7 +22,7 @@ This project was created to demonstrate practical SDET skills, including:
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - Cypress
 - TypeScript
@@ -31,7 +31,7 @@ This project was created to demonstrate practical SDET skills, including:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 cypress/
@@ -54,7 +54,7 @@ cypress/
 
 ---
 
-## 📋 Test Categories
+## Test Categories
 
 The tests are organized into different categories to improve readability and maintainability.
 
@@ -65,7 +65,7 @@ The tests are organized into different categories to improve readability and mai
 
 ---
 
-## 🚀 Installation
+## Installation
 
 Clone the repository:
 
@@ -81,7 +81,7 @@ bun install
 
 ---
 
-## ▶️ Running Cypress
+## Running Cypress
 
 Open the Cypress Test Runner:
 
@@ -97,13 +97,13 @@ bunx cypress run
 
 ---
 
-## 📌 Project Status
+## Project Status
 
 This project is under active development and new test scenarios, utilities, and automation best practices will be added continuously.
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Nathanael Henrique Souza Nunes**
 
