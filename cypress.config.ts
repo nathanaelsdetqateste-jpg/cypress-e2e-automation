@@ -7,4 +7,6 @@ export default defineConfig({
     setupNodeEvents(on, config) {},
     baseUrl: "https://automationexercise.com/",
   },
+
+  downloadsFolder: "cypress/downloads",
 });
