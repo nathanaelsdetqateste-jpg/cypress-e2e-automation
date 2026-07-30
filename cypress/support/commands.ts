@@ -1,37 +1,25 @@
-/// <reference types="cypress" />
-// ***********************************************
-// This example commands.ts shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-//
-// declare global {
-//   namespace Cypress {
-//     interface Chainable {
-//       login(email: string, password: string): Chainable<void>
-//       drag(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       dismiss(subject: string, options?: Partial<TypeOptions>): Chainable<Element>
-//       visit(originalFn: CommandOriginalFn, url: string, options: Partial<VisitOptions>): Chainable<Element>
-//     }
-//   }
-// }
+import { validUser } from "../factories/user/userFactory";
+import { fillRegistrationForm } from "./helpers/registerHelper";
+
+Cypress.Commands.add("validationMessageError", (selector: string) => {
+  return cy
+    .get(selector)
+    .invoke("prop", "validationMessage")
+    .should("include", "Preencha este campo.");
+});
+
+Cypress.Commands.add("login", () => {
+  cy.session("loginUser", () => {
+    cy.fixture("loginUser").then((user) => {
+      cy.visit("/login");
+
+      cy.get('[data-qa="login-email"]').type(user.email);
+      cy.get('[data-qa="login-password"]').type(user.password);
+      cy.get('[data-qa="login-button"]').click();
+
+      cy.get("a")
+        .should("contain.text", `Logged in as ${user.name}`)
+        .should("be.visible");
+    });
+  });
+});
