@@ -22,11 +22,11 @@ describe("Checkout validation", () => {
       cy.get('a[href="/payment"]').should("be.visible").click();
 
       cy.url().should("include", "/payment");
-      cy.get('[data-qa="name-on-card"]').clear().type(123);
-      cy.get('[data-qa="card-number"]').clear().type("teste");
+      cy.get('[data-qa="name-on-card"]').type(123);
+      cy.get('[data-qa="card-number"]').type("teste");
       cy.get('[data-qa="cvc"]').clear().type("teste");
-      cy.get('[data-qa="expiry-month"]').clear().type("teste");
-      cy.get('[data-qa="expiry-year"]').clear().type("teste");
+      cy.get('[data-qa="expiry-month"]').type("teste");
+      cy.get('[data-qa="expiry-year"]').type("teste");
       cy.get('[data-qa="pay-button"]').click();
 
       cy.url().should("include", "/payment_done");
