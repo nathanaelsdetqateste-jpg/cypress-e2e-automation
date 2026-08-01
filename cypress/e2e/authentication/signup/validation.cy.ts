@@ -7,7 +7,7 @@ describe("Validation", () => {
   });
 
   describe("Negative scenarios", () => {
-    it.only("ST-002 - should show error message when email is invalid", () => {
+    it("ST-002 - should show error message when email is invalid", () => {
       const user = {
         ...validUser(),
         email: "invalid-email",
