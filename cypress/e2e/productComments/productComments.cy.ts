@@ -1,5 +1,3 @@
-import { validUser } from "../../factories/user/userFactory";
-
 describe("Product comments", () => {
   beforeEach(() => {
     cy.login("loginUser");
