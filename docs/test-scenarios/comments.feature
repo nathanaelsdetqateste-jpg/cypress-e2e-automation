@@ -28,9 +28,24 @@
 **And** click the "Submit" button
 **Then** the browser should display a message indicating that the email field is required
 
-### ST-031 - Add a comment with an empty comment field
+
+### ST-030 - Add a comment with an empty comment field
 
 **Given** the user is on the product page
 **When** they leave the comment field empty
 **And** click the "Submit" button
 **Then** the browser should display a message indicating that the comment field is required
+
+### ST-031 - Add a comment with an invalid name format
+
+**Given** the user is on the product page
+**When** they enter an invalid name format
+**And** click the "Submit" button
+**Then** the browser should display a validation message indicating that the name format is invalid
+
+### ST-032 - Add a comment with an invalid email format
+
+**Given** the user is on the product page
+**When** they enter an invalid email format
+**And** click the "Submit" button
+**Then** the browser should display a validation message indicating that the email format is invalid
