@@ -17,9 +17,7 @@ describe("Product comments", () => {
       cy.get('button[id="button-review"]')
         .should("contain.text", "Submit")
         .click();
-      cy.get("span")
-        .invoke("text")
-        .should("contain", "Thank you for your review.");
+      cy.contains("Thank you for your review.").should("be.visible");
     });
   });
 });
