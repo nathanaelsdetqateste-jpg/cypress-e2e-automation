@@ -34,5 +34,3 @@
 **When** they try to add a product that is out of stock
 **Then** the product should not be added to the cart
 **And** the browser should display a message indicating that the product is unavailable
-
-
