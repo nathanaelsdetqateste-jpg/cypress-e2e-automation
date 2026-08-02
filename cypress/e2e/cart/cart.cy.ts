@@ -47,7 +47,7 @@ describe("Cart", () => {
   });
 
   describe("Negative scenarios", () => {
-    it.only("ST-025 - Add an out-of-stock product to the cart", () => {
+    it("ST-025 - Add an out-of-stock product to the cart", () => {
       cy.visit("/product_details/999");
 
       cy.get(".btn.btn-default.cart").should("be.visible").click();
