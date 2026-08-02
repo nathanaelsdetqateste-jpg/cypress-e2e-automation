@@ -12,6 +12,7 @@ describe("Cart", () => {
       cy.get(".active")
         .should("contain.text", "Shopping Cart")
         .and("be.visible");
+
       let headersList = [
         "Item",
         "Description",
