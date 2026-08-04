@@ -1,4 +1,4 @@
-describe("Login business rules", () => {
+describe("Business Rules", () => {
   beforeEach(() => {
     cy.visit("/login");
   });
