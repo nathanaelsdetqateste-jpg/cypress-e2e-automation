@@ -1,6 +1,6 @@
 import { validUser } from "../../../factories/user/userFactory";
 
-describe("Login validation", () => {
+describe("Validation", () => {
   beforeEach(() => {
     cy.visit("/login");
   });
