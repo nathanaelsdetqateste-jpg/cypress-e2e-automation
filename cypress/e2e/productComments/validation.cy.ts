@@ -5,7 +5,7 @@ describe("Validation", () => {
   });
 
   describe("Negative scenarios", () => {
-    it("ST-028 - Add a comment with empty name field", () => {
+    it("ST-002 - Add a comment with empty name field", () => {
       cy.fixture("loginUser").then((user) => {
         cy.get('input[id="email"]').type(user.email);
       });
@@ -14,7 +14,7 @@ describe("Validation", () => {
       cy.contains("Thank you for your review.").should("not.be.visible");
     });
 
-    it("ST-029 - Add a comment with empty email field", () => {
+    it("ST-003 - Add a comment with empty email field", () => {
       cy.fixture("loginUser").then((user) => {
         cy.get('input[id="name"]').type(user.name);
       });
@@ -23,7 +23,16 @@ describe("Validation", () => {
       cy.contains("Thank you for your review.").should("not.be.visible");
     });
 
-    it("ST-030 - Add a comment with invalid name format", () => {
+    it("ST-004 - Add a comment with empty review field", () => {
+      cy.fixture("loginUser").then((user) => {
+        cy.get('input[id="name"]').type(user.name);
+        cy.get('input[id="email"]').type(user.email);
+      });
+      cy.validationMessageError('textarea[id="review"]');
+      cy.contains("Thank you for your review.").should("not.be.visible");
+    });
+
+    it("ST-005 - Add a comment with invalid name format", () => {
       let invalidName: string = "invalid-name";
 
       cy.fixture("loginUser").then((user) => {
@@ -36,7 +45,7 @@ describe("Validation", () => {
       cy.contains("Thank you for your review.").should("not.be.visible");
     });
 
-    it("ST-031 - Add a comment with invalid email format", () => {
+    it("ST-006 - Add a comment with invalid email format", () => {
       let invalidEmail: string = "invalid-email";
       cy.fixture("loginUser").then((user) => {
         cy.get('input[id="name"]').type(user.name);
