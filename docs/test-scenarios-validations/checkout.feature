@@ -2,7 +2,7 @@
 
 ## Positive Scenarios
 
-### ST-018 - Complete checkout with valid cart and payment successfully
+### ST-001 - Complete checkout with valid cart and payment successfully
 
 **Given** the user has at least one product in the cart
 **And** the user is on the checkout page
@@ -15,14 +15,14 @@
 
 ## Negative Scenarios
 
-### ST-019 - Checkout with empty cart
+### ST-002 - Checkout with empty cart
 
 **Given** the user has no products in the cart
 **When** they try to proceed to checkout
 **Then** the checkout should be blocked
 **And** the message "Your cart is empty" should be displayed
 
-### ST-020 - Checkout with invalid payment details
+### ST-003 - Checkout with invalid payment details
 
 **Given** the user has at least one product in the cart
 **And** the user is on the checkout page
@@ -30,7 +30,7 @@
 **And** confirm the order
 **Then** the browser should display a payment validation error
 
-### ST-021 - Checkout with missing shipping address
+### ST-004 - Checkout with missing shipping address
 
 **Given** the user has at least one product in the cart
 **And** the user is on the checkout page

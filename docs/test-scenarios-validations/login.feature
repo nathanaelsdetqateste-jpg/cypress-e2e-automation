@@ -2,7 +2,7 @@
 
 ## Positive Scenarios
 
-### ST-014 - Login with valid data successfully
+### ST-001 - Login with valid data successfully
 
 **Given** the user is on the login page
 **When** they fill in the email and password with valid data
@@ -14,21 +14,21 @@
 
 ## Negative Scenarios
 
-### ST-015 - Login with invalid credentials
+### ST-002 - Login with invalid email and password 
 
 **Given** the user is on the login page
 **When** they enter an invalid email and password combination
 **And** click the "Login" button
 **Then** the browser should display a message indicating that the credentials are incorrect
 
-### ST-016 - Login with an empty email field
+### ST-003 - Login with an empty email field
 
 **Given** the user is on the login page
 **When** they leave the email field empty
 **And** click the "Login" button
 **Then** the browser should display a message indicating that the email field is required
 
-### ST-017 - Login with an empty password field
+### ST-004 - Login with an empty password field
 
 **Given** the user is on the login page
 **When** they leave the password field empty
