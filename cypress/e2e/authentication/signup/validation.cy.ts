@@ -27,6 +27,10 @@ describe("Validation", () => {
         password: "123",
       };
 
+      cy.get('[data-qa="signup-name"]').type(user.name);
+      cy.get('[data-qa="signup-email"]').type(user.email);
+      cy.get('[data-qa="signup-button"]').click();
+
       fillRegistrationForm(user);
       cy.get('[data-qa="create-account"]').click();
       cy.get("p").should(
@@ -39,84 +43,43 @@ describe("Validation", () => {
       );
     });
 
-    it("ST-004 - should show error message when name field is empty", () => {
-      const user = validUser();
+    const requiredFields = [
+      { name: "password", skip: "password", selector: '[data-qa="password"]' },
+      {
+        name: "first name",
+        skip: "firstName",
+        selector: '[data-qa="first_name"]',
+      },
+      {
+        name: "last name",
+        skip: "lastName",
+        selector: '[data-qa="last_name"]',
+      },
+      { name: "address", skip: "address", selector: '[data-qa="address"]' },
+      { name: "state", skip: "state", selector: '[data-qa="state"]' },
+      { name: "city", skip: "city", selector: '[data-qa="city"]' },
+      { name: "zipcode", skip: "zipCode", selector: '[data-qa="zipcode"]' },
+      {
+        name: "mobile number",
+        skip: "mobileNumber",
+        selector: '[data-qa="mobile_number"]',
+      },
+    ];
 
-      cy.get('[data-qa="signup-email"]').type(user.email);
-      cy.get('[data-qa="signup-button"]').click();
-      cy.validationMessageError('[data-qa="signup-name"]');
-    });
+    for (const field of requiredFields) {
+      it(`ST-004 - should show error message when ${field.name} field is empty`, () => {
+        const user = validUser();
 
-    it("ST-005 - should show error message when email field is empty", () => {
-      const user = validUser();
+        cy.get('[data-qa="signup-name"]').type(user.name);
+        cy.get('[data-qa="signup-email"]').type(user.email);
+        cy.get('[data-qa="signup-button"]').click();
 
-      cy.get('[data-qa="signup-name"]').type(user.name);
-      cy.get('[data-qa="signup-button"]').click();
-      cy.validationMessageError('[data-qa="signup-email"]');
-    });
+        fillRegistrationForm(user, [field.skip]);
 
-    it("ST-006 - should show error message when password field is empty", () => {
-      const user = validUser();
+        cy.get('[data-qa="create-account"]').click();
 
-      fillRegistrationForm(user, ["password"]);
-      cy.get('[data-qa="create-account"]').click();
-      cy.validationMessageError('[data-qa="password"]');
-    });
-
-    it("ST-007 - should show error message when first name field is empty", () => {
-      const user = validUser();
-
-      fillRegistrationForm(user, ["firstName"]);
-      cy.get('[data-qa="create-account"]').click();
-      cy.validationMessageError('[data-qa="first_name"]');
-    });
-
-    it("ST-008 - should show error message when last name field is empty", () => {
-      const user = validUser();
-
-      fillRegistrationForm(user, ["lastName"]);
-      cy.get('[data-qa="create-account"]').click();
-      cy.validationMessageError('[data-qa="last_name"]');
-    });
-
-    it("ST-009 - should show error message when address field is empty", () => {
-      const user = validUser();
-
-      fillRegistrationForm(user, ["address"]);
-      cy.get('[data-qa="create-account"]').click();
-      cy.validationMessageError('[data-qa="address"]');
-    });
-
-    it("ST-010 - should show error message when state field is empty", () => {
-      const user = validUser();
-
-      fillRegistrationForm(user, ["state"]);
-      cy.get('[data-qa="create-account"]').click();
-      cy.validationMessageError('[data-qa="state"]');
-    });
-
-    it("ST-011 - should show error message when city field is empty", () => {
-      const user = validUser();
-
-      fillRegistrationForm(user, ["city"]);
-      cy.get('[data-qa="create-account"]').click();
-      cy.validationMessageError('[data-qa="city"]');
-    });
-
-    it("ST-012 - should show error message when zipcode field is empty", () => {
-      const user = validUser();
-
-      fillRegistrationForm(user, ["zipCode"]);
-      cy.get('[data-qa="create-account"]').click();
-      cy.validationMessageError('[data-qa="zipcode"]');
-    });
-
-    it("ST-013 - should show error message when mobile number field is empty", () => {
-      const user = validUser();
-
-      fillRegistrationForm(user, ["mobileNumber"]);
-      cy.get('[data-qa="create-account"]').click();
-      cy.validationMessageError('[data-qa="mobile_number"]');
-    });
+        cy.validationMessageError(field.selector);
+      });
+    }
   });
 });
