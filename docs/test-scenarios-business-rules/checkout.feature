@@ -12,6 +12,8 @@
 **Then** the order should be placed successfully
 **And** the message "Your order has been placed successfully" should be displayed
 
+# ==============================================
+
 ## Negative Scenarios
 
 ### BR-002 - Prevent unauthenticated users from completing checkout
