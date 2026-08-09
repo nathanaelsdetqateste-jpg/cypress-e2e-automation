@@ -1,16 +1,6 @@
 import { User } from "../../interface/user/userData";
 
 export function fillRegistrationForm(user: User, skipFields: string[] = []) {
-  if (!skipFields.includes("name")) {
-    cy.get('[data-qa="signup-name"]').type(user.name);
-  }
-
-  if (!skipFields.includes("email")) {
-    cy.get('[data-qa="signup-email"]').type(user.email);
-  }
-
-  cy.get('[data-qa="signup-button"]').click();
-
   if (!skipFields.includes("title")) {
     cy.get(`input[name="title"][value="${user.title}"]`).check();
   }
