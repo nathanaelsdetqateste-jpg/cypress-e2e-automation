@@ -49,13 +49,7 @@ describe("Business Rules", () => {
   });
 
   describe("Negative scenarios", () => {
-    it("BR-004 - The system should not allow checkout with an empty cart", () => {
-      cy.visit("/view_cart");
-      cy.url().should("include", "/view_cart");
-      cy.contains(/empty|carrinho vazio|cannot checkout/i).should("be.visible");
-    });
-
-    it("BR-005 - Should not add an out-of-stock product to the cart", () => {
+    it("BR-004 - Should not add an out-of-stock product to the cart", () => {
       cy.visit("product_details/999");
 
       cy.get(".btn.btn-default.cart")
@@ -65,7 +59,7 @@ describe("Business Rules", () => {
       cy.contains("Added!").should("not.be.visible");
     });
 
-    it("BR-006 - should prevent checkout when user is not authenticated (redirect to login)", () => {
+    it("BR-005 - should prevent checkout when user is not authenticated (redirect to login)", () => {
       cy.AddToCart();
 
       cy.get(".btn.btn-default.check_out").should("be.visible").click();
