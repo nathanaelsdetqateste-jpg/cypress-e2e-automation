@@ -16,6 +16,14 @@ describe("Validation", () => {
       cy.contains("Your email or password is incorrect!").should("be.visible");
     });
 
+    const requiredFields = [
+      {
+        name: "",
+        skip: "",
+        selector: "",
+      },
+    ];
+
     it("ST-003 - Should show validation message when email is empty", () => {
       cy.get('[data-qa="login-password"]').type(validUser().password);
       cy.get('[data-qa="login-button"]').click();
