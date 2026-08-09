@@ -4,10 +4,8 @@ describe("validation", () => {
     cy.visit("/");
   });
   describe("Negative scenarios", () => {
-    it("ST-002 - Checkout with empty cart", () => {});
+    it("ST-001 - Checkout with invalid payment details", () => {});
 
-    it("ST-003 - Checkout with invalid payment details", () => {});
-
-    it("ST-004 - Checkout with missing shipping address", () => {});
+    it("ST-002 - Checkout with missing shipping address", () => {});
   });
 });
