@@ -7,9 +7,6 @@ describe("Checkout", () => {
   });
   describe("Positive scenarios", () => {
     it("BR-001 - Complete checkout with valid cart and payment successfully", () => {
-      cy.login("loginUser");
-      cy.visit("/");
-
       cy.AddToCart();
       cy.CompleteCheckout();
       cy.get('a[href="/download_invoice/500"]').should("be.visible").click();
