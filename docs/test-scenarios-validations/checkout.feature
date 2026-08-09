@@ -10,6 +10,8 @@
 **And** confirm the order
 **Then** the browser should display a payment validation error
 
+# ==============================================
+
 ### ST-002 - Checkout with missing shipping address
 
 **Given** the user has at least one product in the cart
