@@ -9,7 +9,7 @@ describe("Business Rules - Signup", () => {
   describe("Positive scenarios", () => {
     const user = validUser();
 
-    it.only("BR-001 - Signup with an existing email", () => {
+    it.only("BR-002 - Signup with an existing email", () => {
       const user = validUser();
       fillRegistrationForm(user);
       cy.get('[data-qa="create-account"]').click();
