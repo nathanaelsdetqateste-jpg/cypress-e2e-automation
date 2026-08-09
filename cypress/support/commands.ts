@@ -77,6 +77,7 @@ Cypress.Commands.add("CompleteCheckout", () => {
   cy.get('[data-qa="expiry-year"]').type(
     validCard().expirationYearCard.toString(),
   );
+
   cy.get('[data-qa="pay-button"]').should("be.visible").click();
 
   cy.url().should("include", "/payment_done");
