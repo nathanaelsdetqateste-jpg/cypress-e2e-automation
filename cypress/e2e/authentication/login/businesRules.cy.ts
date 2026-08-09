@@ -4,7 +4,7 @@ describe("Business Rules", () => {
   });
 
   describe("Negative scenarios", () => {
-    it("BR-001 - Should not allow login with unregistered credentials", () => {
+    it("BR-002 - User cannot log in with unregistered credentials", () => {
       cy.get('[data-qa="login-email"]').type("invalid@example.com");
       cy.get('[data-qa="login-password"]').type("wrongpassword");
       cy.get('[data-qa="login-button"]').click();
