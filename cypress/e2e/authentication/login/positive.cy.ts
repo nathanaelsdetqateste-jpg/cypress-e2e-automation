@@ -7,7 +7,7 @@ describe("Login", () => {
   });
 
   describe("Positive scenarios", () => {
-    it("ST-001 - Should login successfully with valid credentials.", () => {
+    it("BR-001 - Should login successfully with valid credentials.", () => {
       const user = validUser();
 
       cy.get('[data-qa="signup-name"]').type(user.name);
