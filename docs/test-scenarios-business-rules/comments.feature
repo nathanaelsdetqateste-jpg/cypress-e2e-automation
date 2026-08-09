@@ -11,6 +11,8 @@
 **And** they submit the comment
 **Then** the system should display a success message indicating that the review was submitted successfully
 
+# ==============================================
+
 ## Negative Scenarios
 
 ### BR-002 - Prevent unauthenticated users from commenting
