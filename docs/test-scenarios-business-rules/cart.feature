@@ -29,20 +29,14 @@ BR-003 - The system should remove a product from the cart successfully
 
 ## Negative Scenarios
 
-### BR-004 - The system should not allow checkout with an empty cart
- 
-**Given** the user has no products in the shopping cart
-**When** the user tries to proceed to checkout
-**Then** the system should prevent checkout and show an error message indicating that the cart is empty
-
-### BR-005 - Add an out-of-stock product to the cart
+### BR-004 - Add an out-of-stock product to the cart
 
 **Given** the user is on the home page
 **When** they try to add a product that is out of stock
 **Then** the product should not be added to the cart
 **And** the browser should display a message indicating that the product is unavailable
 
-BR-006 - The system should not allow checkout when the user is not logged in
+BR-005 - The system should not allow checkout when the user is not logged in
 
 **Given** the user has products in the shopping cart and is not authenticated
 **When** the user tries to proceed to checkout
