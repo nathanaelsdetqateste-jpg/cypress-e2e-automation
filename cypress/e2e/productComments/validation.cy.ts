@@ -1,5 +1,4 @@
 import { fillCommentsForm } from "../../support/helpers/CommentsHelper";
-import { User } from "../../interface/user/userData";
 
 describe("Validation", () => {
   beforeEach(() => {
