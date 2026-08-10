@@ -1,3 +1,6 @@
+import { fillCommentsForm } from "../../support/helpers/CommentsHelper";
+import { User } from "../../interface/user/userData";
+
 describe("Validation", () => {
   beforeEach(() => {
     cy.login("loginUser");
@@ -32,6 +35,29 @@ describe("Validation", () => {
         .should("include", invalidEmail);
     });
 
-    const requiredFields = [{}, {}, {}];
+    const requiredFields = [
+      {
+        name: "name",
+        skip: "name",
+        selector: 'input[id="name"]',
+      },
+      {
+        name: "email",
+        skip: "email",
+        selector: 'input[id="email"]',
+      },
+      {
+        name: "review",
+        skip: "review",
+        selector: 'textarea[id="review"]',
+      },
+    ];
+
+    for (const field of requiredFields) {
+      it(`ST-003 - Should show error message when ${field.name} field is empty`, () => {
+        fillCommentsForm([field.skip]);
+        cy.validationMessageError(field.selector);
+      });
+    }
   });
 });
