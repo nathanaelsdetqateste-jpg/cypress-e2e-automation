@@ -9,6 +9,10 @@ describe("Signup", () => {
   describe("Positive scenarios", () => {
     it("ST-001 - Should register a new user successfully", () => {
       const user = validUser();
+      cy.get('[data-qa="signup-name"]').type(user.name);
+      cy.get('[data-qa="signup-email"]').type(user.email);
+      cy.get('[data-qa="signup-button"]').should("be.visible").click();
+
       fillRegistrationForm(user);
       cy.get('[data-qa="create-account"]').click();
       cy.get("b").should("contain.text", "Account Created!");
