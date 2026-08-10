@@ -1,5 +1,6 @@
 describe("Cart", () => {
   beforeEach(() => {
+    cy.clearCookies();
     cy.login("loginUser");
     cy.visit("/");
   });
