@@ -71,7 +71,7 @@ describe("Validation", () => {
     ];
 
     for (const field of requiredFields) {
-      it(`ST-004 - should show error message when ${field.name} field is empty`, () => {
+      it(`ST-004 - Should show error message when ${field.name} field is empty`, () => {
         const user = validUser();
 
         cy.get('[data-qa="signup-name"]').type(user.name);
