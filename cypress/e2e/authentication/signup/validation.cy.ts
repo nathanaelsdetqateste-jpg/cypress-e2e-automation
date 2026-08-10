@@ -33,14 +33,18 @@ describe("Validation", () => {
 
       fillRegistrationForm(user);
       cy.get('[data-qa="create-account"]').click();
-      cy.get("p").should(
-        "not.contain.text",
-        "Congratulations! Your new account has been successfully created!",
-      );
-      cy.get("p").should(
-        "not.contain.text",
-        "You can now take advantage of member privileges to enhance your online shopping experience with us.",
-      );
+      cy.get("p")
+        .should(
+          "not.contain.text",
+          "Congratulations! Your new account has been successfully created!",
+        )
+        .and("not.be.visible");
+      cy.get("p")
+        .should(
+          "not.contain.text",
+          "You can now take advantage of member privileges to enhance your online shopping experience with us.",
+        )
+        .and("not.be.visible");
     });
 
     const requiredFields = [
