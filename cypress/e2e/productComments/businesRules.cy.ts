@@ -29,7 +29,7 @@ describe("Business Rules - Product Comments", () => {
       cy.get(".alert-success").should("not.exist");
     });
 
-    it.only("BR-003 - Prevent comments with unregistered user data", () => {
+    it("BR-003 - Prevent comments with unregistered user data", () => {
       cy.visit("/product_details/1");
 
       cy.get('input[id="name"]').type("Unregistered User");
