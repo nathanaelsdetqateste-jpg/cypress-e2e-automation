@@ -10,6 +10,8 @@ The system should prevent the registration and inform the user that the password
 
 ## ===========================================================
 
+## Bug 2 — Commenting Without Authentication
+
 **Scenario:** BR-002
 
 **Description:**
@@ -19,6 +21,8 @@ The application allows a user to post a comment on a product even when the user 
 The system should prevent unauthenticated users from posting comments on the product.
 
 ## ===========================================================
+
+## Bug 3 — ## Bug 2 — Commenting Without Registration
 
 **Scenario:** BR-003
 
