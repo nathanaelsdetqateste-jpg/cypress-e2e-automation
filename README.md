@@ -42,27 +42,57 @@ The main goal of this project is to demonstrate practical skills in **Software T
 
 ```text
 cypress/
+├── downloads/
+│   └── invoice.txt
+│
 ├── e2e/
 │   ├── authentication/
-│   │   ├── login/
-│   │   └── sign-up/
-│   │
-│   ├── products/
 │   ├── cart/
-│   └── checkout/
+│   ├── checkout/
+│   └── productComments/
+│
+├── factories/
+│   ├── card/
+│   └── user/
 │
 ├── fixtures/
-│   └── test-data/
+│   └── loginUser.json
+│
+├── interface/
+│   ├── birthdate/
+│   ├── card/
+│   └── user/
+│
+├── reports/
+│   └── mochawesome-report/
+│       └── index.html
+│
+├── screenshots/
+│   ├── authentication/
+│   └── productComments/
 │
 ├── support/
+│   ├── helpers/
 │   ├── commands.ts
 │   ├── e2e.ts
-│   └── helpers/
+│   └── index.d.ts
 │
-├── utils/
-│
-└── reports/
-    └── mochawesome-report/
+└── types/
+    └── cypress-mochawesome-reporter...
+
+docs/
+└── observed-issues/
+    ├── BUGS_FOUND.md
+    ├── test-scenarios-business-rules/
+    └── test-scenarios-validations/
+
+node_modules/
+
+.gitignore
+bun.lock
+cypress.config.ts
+package.json
+README.md
 ```
 
 ### Architecture
