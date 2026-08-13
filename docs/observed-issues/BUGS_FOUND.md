@@ -1,4 +1,4 @@
-## Bug 1 — Cadastro permite senha inválida
+## Bug 1 — Register allow invalid password
 
 **Scenario:** ST-003
 
@@ -22,7 +22,7 @@ The system should prevent unauthenticated users from posting comments on the pro
 
 ## ===========================================================
 
-## Bug 3 — ## Bug 2 — Commenting Without Registration
+## Bug 3 — Commenting Without Registration
 
 **Scenario:** BR-003
 
