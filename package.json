@@ -9,7 +9,11 @@
   "private": true,
   "scripts": {
     "cy:open": "cypress open",
-    "cy:run": "cypress run"
+    "cy:run": "cypress run",
+    "test:authentication": "cypress run --spec \"cypress/e2e/authentication/**/*\"",
+    "test:cart": "cypress run --spec \"cypress/e2e/cart/**/*\"",
+    "test:checkout": "cypress run --spec \"cypress/e2e/checkout/**/*\"",
+    "test:product-comments": "cypress run --spec \"cypress/e2e/productComments/**/*\""
   },
   "type": "module"
 }
