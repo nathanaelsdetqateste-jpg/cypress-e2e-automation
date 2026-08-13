@@ -6,7 +6,7 @@ This project demonstrates practical **QA Automation / SDET** practices through a
 
 ---
 
-## 🎯 Project Goals
+## Project Goals
 
 The main goal of this project is to demonstrate practical skills in **Software Testing and Test Automation**, including:
 
@@ -26,7 +26,7 @@ The main goal of this project is to demonstrate practical skills in **Software T
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Cypress** — E2E test automation
 - **TypeScript** — Type-safe test development
@@ -38,7 +38,7 @@ The main goal of this project is to demonstrate practical skills in **Software T
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```text
 cypress/
@@ -108,7 +108,7 @@ The project separates test responsibilities to improve **readability, reusabilit
 
 ---
 
-## 🧪 Test Organization
+## Test Organization
 
 Test scenarios are organized according to their purpose and expected behavior.
 
@@ -159,7 +159,7 @@ Examples:
 
 ---
 
-## 🔄 Reusable Test Components
+## Reusable Test Components
 
 The project uses reusable components to reduce code duplication and improve maintainability.
 
@@ -205,7 +205,7 @@ This is especially useful for scenarios such as user registration, where duplica
 
 ---
 
-## 📊 Test Reporting
+## Test Reporting
 
 The project uses **Mochawesome** to generate test execution reports.
 
@@ -226,7 +226,7 @@ cypress/reports/mochawesome-report/
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 Clone the repository:
 
@@ -248,7 +248,7 @@ bun install
 
 ---
 
-## ▶️ Running the Tests
+## Running the Tests
 
 Open Cypress in interactive mode:
 
@@ -264,7 +264,7 @@ bunx cypress run
 
 ---
 
-## 🚀 CI/CD
+## CI/CD
 
 The project is designed to support automated test execution through **GitHub Actions**.
 
@@ -280,7 +280,7 @@ This allows automated tests to be executed consistently during the development l
 
 ---
 
-## 📋 Test Evidence
+## Test Evidence
 
 Test execution results and relevant evidence are documented when necessary, especially for scenarios involving:
 
@@ -294,7 +294,7 @@ This helps provide traceability between the **test scenario, expected behavior, 
 
 ---
 
-## 📈 Project Status
+## Project Status
 
 The project is continuously evolving as new test scenarios and automation practices are implemented.
 
@@ -310,7 +310,7 @@ Current focus areas include:
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 **Nathanael Henrique Souza Nunes**
 
