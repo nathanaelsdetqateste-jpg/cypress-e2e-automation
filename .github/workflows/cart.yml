@@ -1,0 +1,43 @@
+name: Cart E2E Tests
+
+on:
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  cart:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Run Cart E2E Tests
+        run: bun run test:cart
+
+      - name: Upload Cart screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cart-screenshots
+          path: cypress/screenshots/
+
+      - name: Upload Cart report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cart-report
+          path: cypress/reports/
