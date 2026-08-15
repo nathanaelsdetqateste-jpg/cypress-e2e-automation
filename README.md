@@ -312,9 +312,11 @@ Current focus areas include:
 
 ## Author
 
-```markdown
+
 | [<img src="https://github.com/nathanaelsdetqateste-jpg.png" width="75px"/><br/><sub><b>Nathanael Henrique Souza Nunes</b></sub>](https://github.com/nathanaelsdetqateste-jpg) |
 | :---: |
 | QA Engineer / SDET |
-```
+
+
+
 
